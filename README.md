@@ -20,45 +20,85 @@ git clone https://github.com/acnaweb/ping.git
 #### Instalação
 
 ```
-git clone https://github.com/acnaweb/ping.git
+git clone https://github.com/Luquinhas11x/fiap-checkpoint1.git
 ```
 
 ## Execução
 
+### Maven
+* Limpar o diretório de saída do projeto Maven
+
+```
+mvn clean
+```
+
+* Compilar o projeto Maven
+
+```
+mvn package
+```
 
 #### Docker
+* Criar nova imagem Docker
 
 ```
-docker run -d -p 8080:8080 minhaimagen:tag
+docker build -t fiap-checkpoint1
 ```
 
-#### Menu iniciar
+* Executar container
 
-> Menu Iniciar: Selecionar e clicar em Aplicação X
+spring.profiles.active=dev
+
+```
+docker run -d -p 8080:8080 -e PROFILE=<prd|dev|stg> ping
+```
+
+## Container Registry
+
+
+#### Docker Hub
+
+* Login
+
+```
+docker login
+```
+
+* Criar imagem pronta para upload (método 1 - criando nova imagem)
+
+```
+docker build -t fiap-checkpoint1 .
+```
+
+* Criar imagem pronta para upload (método 2 - renomeando imagem existente)
+
+```
+docker tag fiap-checkpoint1 ludushark/fiap-checkpoint1
+```
+
+* Upload de imagem para o Docker Hub
+
+```
+docker push ludushark/fiap-checkpoint1
+```
 
 #### Navegação
+- Base
 
 http://localhost:8080
 
+- Endpoint que retorna string "Pong"
+
+http://localhost:8080/ping
 
 ## Features (Funcionalidades)
 
-#### Upload de arquivos
-
-> __Lorem Ipsum__ is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-
-#### Conversão de dados
-
-> __Lorem Ipsum__ is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-
+- Múltiplos profiles
 
 ## Contatos
 
-- Desenvolvedor 1 - desenvolvedor1@email.com
-- Desenvolvedor 2 - desenvolvedor2@email.com
-
+- Lucas Santana de Paula - lukinha11x@gmail.com
 
 ## Referencias
 
- - [UOL](https://www.uol.com.br/)
- - [Gov br](https://www.gov.br/)
+ - [GitHub com as intruções](https://github.com/acnaweb/microservices-2024/tree/main)
