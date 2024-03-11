@@ -50,7 +50,7 @@ docker build -t fiap-checkpoint1
 spring.profiles.active=${PROFILE}
 
 ```
-docker run -d -p 8080:8080 -e PROFILE=<prd|dev|stg> ping
+docker run -d -p 8080:8080 -e PROFILE=<prd|dev|stg> fiap-checkpoint1
 ```
 
 ## Container Registry
@@ -67,13 +67,7 @@ docker login
 * Criar imagem pronta para upload (método 1 - criando nova imagem)
 
 ```
-docker build -t fiap-checkpoint1 .
-```
-
-* Criar imagem pronta para upload (método 2 - renomeando imagem existente)
-
-```
-docker tag fiap-checkpoint1 ludushark/fiap-checkpoint1
+docker build -t ludushark/fiap-checkpoint1 .
 ```
 
 * Upload de imagem para o Docker Hub
