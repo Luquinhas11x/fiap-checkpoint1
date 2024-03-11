@@ -96,3 +96,4 @@ http://localhost:8080/ping
 ## Referencias
 
  - [GitHub com as intruções](https://github.com/acnaweb/microservices-2024/tree/main)
+ - [Docker Hub com o repositório](https://hub.docker.com/r/ludushark/fiap-checkpoint1/tags)
