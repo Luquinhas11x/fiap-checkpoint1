@@ -47,7 +47,7 @@ docker build -t fiap-checkpoint1
 
 * Executar container
 
-spring.profiles.active=dev
+spring.profiles.active=${PROFILE}
 
 ```
 docker run -d -p 8080:8080 -e PROFILE=<prd|dev|stg> ping
@@ -87,7 +87,7 @@ docker push ludushark/fiap-checkpoint1
 
 http://localhost:8080
 
-- Endpoint que retorna string "Pong"
+- Endpoint que retorna string "Pong em dev | prd | stg"
 
 http://localhost:8080/ping
 
